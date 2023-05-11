@@ -12,7 +12,23 @@ app.use(cors());
 
 app.post("/submit-form", upload.single("file"), (req, res) => {
   // Get form data from req.body and req.file
-  const { old, english, OnlyFans, face, subsOnlyFans, willingToInvest, next6months, createContent, TikTokLink, country, language, FullName, email,  PhoneNumber, expectations } = req.body;
+  const {
+    old,
+    english,
+    OnlyFans,
+    face,
+    subsOnlyFans,
+    willingToInvest,
+    next6months,
+    createContent,
+    TikTokLink,
+    country,
+    language,
+    FullName,
+    email,
+    PhoneNumber,
+    expectations,
+  } = req.body;
   const file = req.file;
 
   console.log(req.body.email);
@@ -21,15 +37,15 @@ app.post("/submit-form", upload.single("file"), (req, res) => {
   const transporter = nodemailer.createTransport({
     service: "Gmail",
     auth: {
-      user: "musfiqurofficial1999@gmail.com",
-      pass: "aajmymaywdhnksbv",
+      user: "smithsondaniel22@gmail.com",
+      pass: "rsiminpwkrdqqwkt",
     },
   });
 
   // Set up email options
   const mailOptions = {
     from: email,
-    to: "musfiqurofficial1999@gmail.com",
+    to: "smithsondaniel22@gmail.com",
     subject: "Form submission",
     html: `
       <p>${FullName} Email: ${email}</p>
@@ -73,7 +89,7 @@ app.post("/submit-form", upload.single("file"), (req, res) => {
 });
 
 app.get("/", (req, res) => {
-  res.send("<h1 style='color: green'> Server Home Page </h1>");
+  res.send("<h1 style='color: red'> Server Home new Page </h1>");
 });
 
 const port = process.env.PORT || 5001;
